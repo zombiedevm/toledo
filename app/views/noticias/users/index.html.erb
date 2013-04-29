@@ -1,0 +1,30 @@
+<h3>Sistema de Administracion Toledo </h3>
+<div class="span9">
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Dia de su registro</th>
+      <th>Role</th>
+      <th>Modulo</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      
+      <td><%= user.email %></td>
+      <td><%= user.created_at.to_date %></td>
+      <td><%= user.roles.first.name.titleize unless user.roles.first.nil? %></td>
+      <td><%= user.roles.first.modulo unless user.roles.first.nil? %></td>
+      <td>
+        <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini" type="button">Change role</a>
+        <%= render user %>
+      </td>
+      <td><%= link_to("Delete user", noticias_user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini') unless user == current_user %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>

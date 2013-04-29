@@ -1,0 +1,21 @@
+ <%= stylesheet_link_tag    "noticias/application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <!-- start: Meta -->
+	    <meta charset="utf-8">
+   		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <!-- end: Meta -->
+</head>
+<body>
+  <%= render 'layouts/noticias/menu' %>
+  <%= render 'layouts/noticias/sidebar' %>
+    <div class="content">
+    <%= render 'layouts/error' %>
+    <%= yield %>
+  </div>
+  <%= render 'layouts/footer' %>
+</body>
+</html>
+
