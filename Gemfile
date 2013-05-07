@@ -21,6 +21,7 @@ group :assets do
   gem 'chosen-rails'
   gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
   gem 'uglifier', '>= 1.0.3'
+  gem 'bootstrap-datepicker-rails'
 end
 group :development do
   gem 'guard'

@@ -20,8 +20,43 @@ Role.create([
   { :name => 'corresponsal' , :modulo => 'noticias'},
   {:name => 'capturista' , :modulo => 'noticias'}])
 
-mike = User.create(email:"mhuerta@promovision.mx", password: "linux3963", password_confirmation: "linux3963")
-yaz = User.create(email:"yvazquez@promovision.mx", password: "12345678", password_confirmation: "12345678")
+Plaza.create([
+	{ name:'Cancun'},
+	{ name: 'Playa del Carmen'},
+	{ name: 'Merida'},
+	{ name: 'Chetumal'},
+	{ name: 'Cozumel'},
+	{ name: 'Tulum'},
+	{ name: 'Jose Maria Morelos'},
+	{ name: 'Isla Mujeres'},
+	{ name: 'Tizimin'},
+	{ name: 'Valladolid'},
+	{ name: 'Campeche'}])
+
+Source.create([
+	{ name:	'Policiaco'},
+	{ name: 'Religion'},
+	{ name: 'Politica'},
+	{ name: 'Politica'}, 
+	{ name: 'Educacion'},
+	{ name: 'Empresarial/Turismo'},
+	{ name: 'Ciencia y tecnologia'},
+	{ name: 'Deportes'}, 
+	{ name: 'Salud'},
+	{ name: 'Economia'},
+	{ name: 'Sociales'},
+	{ name: 'Espectaculo'},
+	{ name: 'Entretenimiento'}, 
+	{ name: 'Ayuntamiento'},
+	{ name: 'Clima'},
+	{ name: 'Medio ambiente'}])
+
+User.create([
+	{ name: "Carlos Aguila", email:"caguila@promovision.mx",password: "12345678",password_confirmation:"12345678",plaza: "1"}
+	])
+
+mike = User.create(name: "miguel huerta", email:"mhuerta@promovision.mx", password: "linux3963", password_confirmation: "linux3963")
+yaz = User.create(name: "Yazmin Vazquez",email:"yvazquez@promovision.mx", password: "12345678", password_confirmation: "12345678")
 
 mike.add_role :root
 yaz.add_role :root

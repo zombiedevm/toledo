@@ -1,6 +1,11 @@
+<%= menu("Inicio",noticias_root_path,"#") %>
 <% if current_user.has_role? :jefe_de_informacion %>
 <%= render "layouts/noticias/usuarios/jefe-de-informacion" %>
 <% end %>
 <% if current_user.has_role? :reportero %>
+<%= render "layouts/noticias/usuarios/reportero" %>
+<% end %>
+<% if current_user.has_role? :root %>
+<%= render "layouts/noticias/usuarios/jefe-de-informacion" %>
 <%= render "layouts/noticias/usuarios/reportero" %>
 <% end %>

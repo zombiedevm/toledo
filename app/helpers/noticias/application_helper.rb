@@ -13,4 +13,20 @@ module Noticias::ApplicationHelper
 	def num_alerts(num)
 		link_to raw("<div class='notify'>#{num}</div>"),"#",role: "button",class: "dropdown-toggle", data:{toggle:"dropdown"}
 	end
+
+	def logout(title)
+	 link_to raw("<i class='icon-signout'></i>#{title}"),destroy_user_session_path,:method => :delete ,tabindex: "-1"
+	end
+
+	def usuario(id)
+		User.get_user(id).name
+	end
+	def notified current_user
+	@notificaciones = Notification.todas(current_user).pendientes
+	end
+
+	def notification_completed notification_id
+		n =  Notification.find(notification_id)
+		n.update_attribute(:realizada,true)
+	end
 end

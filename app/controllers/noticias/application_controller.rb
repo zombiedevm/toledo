@@ -4,4 +4,6 @@ class Noticias::ApplicationController <  ActionController::Base
     redirect_to noticias_root_path, :alert => exception.message
   end
   before_filter :authenticate_user!
+  
+
 end

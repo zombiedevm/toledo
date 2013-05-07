@@ -22,7 +22,7 @@ class Noticias::UsersController < Noticias::ResourceController
 
     if @user.save
       respond_to do |format|
-        format.html { redirect_to users_path }
+        format.html { redirect_to noticias_users_path }
       end
     else
       respond_to do |format|
@@ -34,7 +34,7 @@ class Noticias::UsersController < Noticias::ResourceController
   def update
     authorize! :update, @user, :message => 'Not authorized as an administrator.'
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user], :as => :admin)
+    if @user.update_attributes(params[:user] , as: :root)
       redirect_to noticias_users_path, :notice => "User updated."
     else
       redirect_to noticias_users_path, :alert => "Unable to update user."

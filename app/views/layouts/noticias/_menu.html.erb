@@ -6,20 +6,12 @@
 	                <!-- Agregar formulario de busqueda -->                        
 
 	                </li>
-	                
-	                <li class="dropdown header-border">
-	                	<%= render "layouts/noticias/messages" %>
-	                </li>  
-	                <li class="dropdown header-border">
-	                    <a href="#" role="button" class="dropdown-toggle " data-toggle="dropdown">
-	                        <!-- <div class="thumb-account">
-	                            <img height="20" width="20" src="assets/images/timeline-team.jpg" alt="Your profile">
-	                            <span><i class="icon-caret-down"></i></span>
-	                        </div> -->
-	                    </a>
+	                	<%= render "layouts/noticias/logout" %>
+	                	<%= render "layouts/noticias/messages" %> 
+	                	
 	                
 
-</ul>
+			</ul>
 	            <%= link_to noticias_dashboard_path, class: "brand" do %>
 	            	<span class="title">Sistema de Noticias</span> <span class="logo"></span></a>
 	            <% end %>

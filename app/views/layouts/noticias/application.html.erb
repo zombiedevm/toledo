@@ -1,5 +1,5 @@
  <%= stylesheet_link_tag    "noticias/application" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "noticias/application" %>
   <%= csrf_meta_tags %>
   <!-- start: Meta -->
 	    <meta charset="utf-8">
@@ -12,8 +12,12 @@
   <%= render 'layouts/noticias/menu' %>
   <%= render 'layouts/noticias/sidebar' %>
     <div class="content">
-    <%= render 'layouts/error' %>
-    <%= yield %>
+    <div class="wrapper-content">
+      <div class="conteiner-fluid">  
+        <%= render 'layouts/error' %>
+        <%= yield %>
+      </div>
+  </div>
   </div>
   <%= render 'layouts/footer' %>
 </body>

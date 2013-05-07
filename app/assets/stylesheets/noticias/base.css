@@ -378,3 +378,14 @@ label[for='toggle-all'] {
 .hidden{
 	display:none;
 }
+
+input[type="text"]{
+	height: 30px;
+	font-size: 1.375em;
+
+}
+
+textarea
+{
+ font-size: 1.375em;
+}
